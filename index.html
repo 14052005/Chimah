@@ -2,149 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tecma ICT Company</title>
+  <title>Bazar Purchase Form</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f4f6f8;
-      color: #333;
-      line-height: 1.6;
+      padding: 20px;
     }
-
-    header {
+    .form-box {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
       background-color: #0d47a1;
       color: white;
-      padding: 20px 40px;
-      text-align: center;
+      border: none;
+      padding: 12px 20px;
+      cursor: pointer;
     }
-
-    nav {
-      background: #1976d2;
-      padding: 10px 0;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .section h2 {
-      margin-bottom: 20px;
-      color: #0d47a1;
-    }
-
-    .services {
-    display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .service-box {
-      flex: 1 1 250px;
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #0d47a1;
-      color: white;
-      margin-top: 40px;
-    }
-    .logo-circle {
-  width: 20%;
-  height: 35px;
-  background-color: white;
-  color: #0d47a1;
-  font-size: 25px;
-  font-weight: bold;
-  border-radius: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 8px #1976d2;
-  font-family: 'Segoe UI', sans-serif;
-}
   </style>
 </head>
 <body>
-  <header>
-      <div class="logo-circle">TC</div>
-    <h1>Tecma ICT Company</h1>
-    <p>Innovating Your Digital Future</p>
-  </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="form-box">
+    <h2>Baazar Shop Purchase Form</h2>
+    <form action="submit.php" method="POST">
+      <input type="hidden" name="agent_id" value="<?php echo $_GET['agent']; ?>">
+      <label for="name">Customer Name:</label>
+      <input type="text" name="name" required>
 
-  <div class="section" id="about">
-    <h2>About Us</h2>
-    <p>Tecma ICT is a forward-thinking tech company focused on providing cutting-edge ICT solutions to businesses and individuals.It is founded by Standion Chimah mkwamba. We specialize in software development, website designing and devepment and networking, digital marketing, and IT consulting.</p>
+      <label for="phone">Phone Number:</label>
+      <input type="text" name="phone" required>
+
+      <label for="location">Shop Location:</label>
+      <select name="location" required>
+        <option value="">–Select–</option>
+        <option value="Lilongwe">Lilongwe</option>
+        <option value="Blantyre">Blantyre</option>
+        <option valu="Limbe">Limbe</option>
+        <option value="Mzuzu">Mzuzu</option>
+      </select>
+
+      <label for="item">Item Name:</label>
+      <input type="text" name="item" required>
+
+      <label for="source">Write a special message?</label>
+      <input type="text" name="source">
+
+      <button type="submit">Submit</button>
+    </form>
   </div>
-
-  <div class="section" id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="service-box">
-        <h3>Software Development</h3>
-        <p>We create custom applications tailored to your needs — from mobile apps to enterprise software.</p>
-      </div>
-      <div class="service-box">
-    <h3>Website Development</h3>
-    <p>We design and build responsive, modern websites that help you grow your business and stand out online.</p>
-  </div>
-      <div class="service-box">
-        <h3>Networking Solutions</h3>
-        <p>Reliable networking and infrastructure support for businesses of all sizes.</p>
-      </div>
-      <div class="service-box">
-        <h3>Digital Marketing</h3>
-        <p>Grow your online presence with SEO, social media management, and targeted campaigns.</p>
-      </div>
-      <div class="service-box">
-        <h3>IT Consulting</h3>
-        <p>Expert advice and support for your technology projects and digital transformation.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: mkwambastandion@gmail.com</p>
-    <p>Phone: +265 983 209 805</p>
-    <p>Location: Lilongwe, Malawi</p>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Tecma ICT Company. All rights reserved.</p>
-  </footer>
 
 </body>
 </html>
